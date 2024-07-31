@@ -1,9 +1,0 @@
-const config = {
-	"wwwPort": 3000,
-	"dbHost": "127.0.0.1",
-	"dbPort": 27017,
-	"dbName": "floorplan",
-	"mountPoint": "/"
-}
-
-export default config;
