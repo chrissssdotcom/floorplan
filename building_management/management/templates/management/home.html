@@ -1,0 +1,41 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Welcome to the Building Management System</h1>
+    <ul>
+        <li><a href="{% url 'building_list' %}">Manage Buildings</a></li>
+        <li><a href="{% url 'floor_list' %}">Manage Floors</a></li>
+        <li><a href="{% url 'location_list' %}">Manage Locations</a></li>
+        <li><a href="{% url 'person_list' %}">Manage People</a></li>
+    </ul>
+
+    <h2>Buildings</h2>
+    <ul>
+        {% for building in buildings %}
+            <li>{{ building.site_display_name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Floors</h2>
+    <ul>
+        {% for floor in floors %}
+            <li>{{ floor }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Locations</h2>
+    <ul>
+        {% for location in locations %}
+            <li>{{ location }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>People</h2>
+    <ul>
+        {% for person in people %}
+            <li>{{ person }} - {{ person.location }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
